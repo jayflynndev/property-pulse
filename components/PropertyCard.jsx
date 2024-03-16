@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  FaMoneyBill,
+  FaBed,
   FaBath,
   FaRulerCombined,
+  FaMoneyBill,
   FaMapMarker,
 } from "react-icons/fa";
 
@@ -23,7 +24,7 @@ const PropertyCard = ({ property }) => {
   return (
     <div className="rounded-xl shadow-md relative">
       <Image
-        src={`/images/properties/${property.images[0]}`}
+        src={property.images[0]}
         alt=""
         height={0}
         width={0}
@@ -41,12 +42,12 @@ const PropertyCard = ({ property }) => {
 
         <div className="flex justify-center gap-4 text-gray-500 mb-4">
           <p>
-            <FaMoneyBill className="inline mr-2" /> {property.beds}
-            <span className="md:hidden lg:inline"> Beds</span>
+            <FaBed className="inline mr-2" /> {property.beds}{" "}
+            <span className="md:hidden lg:inline">Beds</span>
           </p>
           <p>
-            <FaBath className="inline mr-2" /> {property.baths}
-            <span className="md:hidden lg:inline"> Baths</span>
+            <FaBath className="inline mr-2" />
+            {property.baths} <span className="md:hidden lg:inline">Baths</span>
           </p>
           <p>
             <FaRulerCombined className="inline mr-2" />
@@ -61,11 +62,13 @@ const PropertyCard = ({ property }) => {
               <FaMoneyBill className="inline mr-2" /> Nightly
             </p>
           )}
+
           {property.rates.weekly && (
             <p>
               <FaMoneyBill className="inline mr-2" /> Weekly
             </p>
           )}
+
           {property.rates.monthly && (
             <p>
               <FaMoneyBill className="inline mr-2" /> Monthly
@@ -80,11 +83,11 @@ const PropertyCard = ({ property }) => {
             <FaMapMarker className="text-orange-700 mt-1" />
             <span className="text-orange-700">
               {" "}
-              {property.location.city}, {property.location.state}{" "}
+              {property.location.city} {property.location.state}{" "}
             </span>
           </div>
           <Link
-            href={`/properties/${property.id}`}
+            href={`/properties/${property._id}`}
             className="h-[36px] bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-center text-sm"
           >
             Details
@@ -94,5 +97,4 @@ const PropertyCard = ({ property }) => {
     </div>
   );
 };
-
 export default PropertyCard;

@@ -13,12 +13,11 @@ const Footer = () => {
 
         <div>
           <p className="text-sm text-gray-500 mt-2 md:mt-0">
-            © {currentYear} PropertyPulse. All rights reserved.
+            &copy; {currentYear} PropertyPulse. All rights reserved.
           </p>
         </div>
       </div>
     </footer>
   );
 };
-
 export default Footer;

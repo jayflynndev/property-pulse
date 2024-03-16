@@ -1,4 +1,5 @@
 import InfoBox from "./InfoBox";
+
 const InfoBoxes = () => {
   return (
     <section>
@@ -13,25 +14,24 @@ const InfoBoxes = () => {
               backgroundColor: "bg-black",
             }}
           >
-            Find your dream rental property. Boomark properties and contact
+            Find your dream rental property. Bookmark properties and contact
             owners.
           </InfoBox>
           <InfoBox
             heading="For Property Owners"
             backgroundColor="bg-blue-100"
             buttonInfo={{
-              text: "Add Properties",
+              text: "Add Property",
               link: "/properties/add",
               backgroundColor: "bg-blue-500",
             }}
           >
-            List your properties and reach potential tenants. Rent as an Airbnb
-            or longterm
+            List your properties and reach potential tenants. Rent short or long
+            term.
           </InfoBox>
         </div>
       </div>
     </section>
   );
 };
-
 export default InfoBoxes;
